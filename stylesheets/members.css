@@ -1,0 +1,194 @@
+@font-face {
+    font-family: montserrat;
+    src: url(../font/Montserrat-VariableFont_wght.ttf);
+    font-weight: 100 900;
+}
+body{
+    width: 100%;
+    min-height: 100vh;
+    font-family: montserrat;
+    color: black;
+    background-image: url(../image/background_lower.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+}
+.container{
+    width: 100%;
+    height: 50px;
+    border: none;
+    display: block;
+    overflow: hidden;
+    position: fixed;
+    z-index: 1;
+}
+.main{
+    width: 100%;
+    min-height: 50vh;
+    padding-bottom: clamp(40px, 10vh, 120px);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+.big-card{
+    display: flex;
+    flex-flow: column;
+    width: clamp(280px, 70vw, 1000px);
+    min-height: clamp(150px, 60vh, 400px);
+    background-color: white;
+    margin-top: clamp(50px,4vh,93px);
+}
+.mini-card-top{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: clamp(10px, 1vw, 20px);
+    padding: clamp(14px, 1.6vw, 30px) 2.5% 0 2.5%;
+}
+.filter{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0;
+    border: none;
+    background: none;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: clamp(13px, 0.85vw, 16px);
+    color: black;
+    cursor: pointer;
+}
+.filter img{
+    width: 10px;
+}
+.tools{
+    display: flex;
+    align-items: center;
+    gap: clamp(12px, 1.5vw, 28px);
+}
+.views{
+    display: flex;
+    align-items: center;
+    gap: clamp(10px, 1vw, 18px);
+}
+.views button{
+    display: block;
+    padding: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+.views img{
+    display: block;
+    width: clamp(13px, 0.85vw, 16px);
+    height: clamp(13px, 0.85vw, 16px);
+}
+.search{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: clamp(150px, 17vw, 325px);
+    padding-bottom: 6px;
+    border-bottom: 1px solid rgb(90, 90, 90);
+}
+.search img{
+    width: 14px;
+    height: 14px;
+}
+.search input{
+    flex: 1;
+    min-width: 0;
+    border: none;
+    outline: none;
+    background: none;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: clamp(13px, 0.8vw, 15px);
+    color: black;
+}
+.search input::placeholder{
+    color: black;
+}
+.search span{
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: clamp(11px, 0.7vw, 13px);
+    color: rgb(120, 120, 120);
+}
+.mini-card-bottom{
+    flex: 1;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    text-align: center;
+    padding: clamp(30px, 6vh, 90px) 5% clamp(30px, 5vh, 60px) 5%;
+}
+.mini-card-bottom h2{
+    font-size: clamp(18px, 1.7vw, 34px);
+    font-weight: 900;
+    line-height: 1.3;
+    letter-spacing: clamp(2px, 0.25vw, 5px);
+    text-transform: uppercase;
+}
+.mini-card-bottom p{
+    width: clamp(200px, 38%, 400px);
+    margin-top: clamp(14px, 1.5vw, 28px);
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: clamp(13px, 0.85vw, 16px);
+    line-height: 1.5;
+}
+.login{
+    width: clamp(100px, 9vw, 170px);
+    margin-top: clamp(24px, 2.5vw, 48px);
+    padding: clamp(10px, 0.9vw, 16px) 0;
+    border: none;
+    background-color: rgb(46, 125, 128);
+    color: white;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: clamp(13px, 0.85vw, 16px);
+    cursor: pointer;
+}
+.login:hover{
+    transition: 0.5s;
+    background-color: black;
+}
+.filter:hover, .views button:hover{
+    transition: 0.5s;
+    opacity: 0.6;
+}
+.footer-container{
+    width: 100%;
+    background-color: rgb(87, 187, 191);
+}
+.footer-iframe{
+    display: block;
+    width: 100%;
+    height: 540px;
+    border: none;
+}
+@media (max-width: 1100px){
+    .big-card{
+        width: 84%;
+    }
+}
+@media (max-width: 900px){
+    body{
+        background-attachment: scroll;
+    }
+}
+@media (max-width: 700px){
+    .big-card{
+        width: 90%;
+    }
+    .footer-iframe{
+        height: 1100px;
+    }
+}
+@media (max-width: 500px){
+    .mini-card-top{
+        justify-content: center;
+    }
+    .search{
+        width: 100%;
+    }
+    .footer-iframe{
+        height: 1200px;
+    }
+}

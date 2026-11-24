@@ -1,0 +1,260 @@
+@font-face {
+    font-family: montserrat;
+    src: url(../font/Montserrat-VariableFont_wght.ttf);
+    font-weight: 100 900;
+}
+body{
+    width: 100%;
+    font-family: montserrat;
+    color: black;
+}
+.container{
+    width: 100%;
+    height: 50px;
+    border: none;
+    display: block;
+    overflow: hidden;
+    position: fixed;
+    z-index: 2;
+}
+.main{
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    padding: clamp(90px, 6.8vw, 128px) 0 clamp(40px, 5vw, 100px) 0;
+    background-image: url(../image/allan-on-the-boat.jpg);
+    background-size: 140vw auto;
+    background-position: 0 -26vw;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+.white{
+    position: absolute;
+    left: 0;
+    top: clamp(280px, 33.6vw, 640px);
+    bottom: 0;
+    width: 100%;
+    background-color: white;
+    z-index: 0;
+}
+hr{
+    width: 40px;
+    height: 2px;
+    border: none;
+    margin: 0;
+    background-color: black;
+}
+.head{
+    position: relative;
+    z-index: 1;
+    width: 90%;
+    max-width: 980px;
+    padding: 0 2.1%;
+    margin-bottom: clamp(30px, 3.2vw, 60px);
+}
+.head h2{
+    width: 55%;
+    margin-top: clamp(16px, 1.5vw, 28px);
+    font-size: clamp(22px, 2.45vw, 46px);
+    font-weight: 900;
+    line-height: clamp(28px, 2.7vw, 51px);
+    letter-spacing: clamp(2px, 0.25vw, 5px);
+    text-transform: uppercase;
+}
+.card, .card2{
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-flow: row;
+    width: 90%;
+    max-width: 980px;
+    min-height: 360px;
+    background-color: white;
+    border: 1px solid rgb(205, 205, 205);
+    font-family: Helvetica, Arial, sans-serif;
+}
+.card{
+    margin-bottom: clamp(14px, 1.1vw, 20px);
+}
+.card2{
+    margin-bottom: clamp(24px, 2vw, 38px);
+}
+.card-img{
+    display: block;
+    width: 48.8%;
+    object-fit: cover;
+}
+.card-info{
+    flex: 1;
+    display: flex;
+    flex-flow: column;
+    padding: 26px 4.6% 0 4.6%;
+}
+.card-top{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.author{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.avatar{
+    display: block;
+    width: 32px;
+    height: 32px;
+}
+.author-text span{
+    display: block;
+    font-size: clamp(10px, 0.6vw, 11px);
+    line-height: 16px;
+}
+.bookmark, .like{
+    display: block;
+    padding: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+.bookmark{
+    margin-top: 8px;
+}
+.bookmark img{
+    display: block;
+    width: 14px;
+    height: 18px;
+}
+.bookmark:hover, .like:hover{
+    transition: 0.5s;
+    opacity: 0.6;
+}
+.card-info h3{
+    margin-top: clamp(14px, 1.1vw, 20px);
+    font-size: clamp(20px, 1.5vw, 28px);
+    font-weight: 400;
+    line-height: clamp(26px, 1.65vw, 31px);
+}
+.card-info p{
+    margin-top: clamp(14px, 1.2vw, 22px);
+    font-size: clamp(13px, 0.8vw, 15px);
+    line-height: 24px;
+}
+.card-bottom{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+    border-top: 1px solid rgb(150, 150, 150);
+    height: 58px;
+}
+.stats{
+    display: flex;
+    gap: 16px;
+}
+.stats span{
+    font-size: 11px;
+}
+.like img{
+    display: block;
+    width: 18px;
+    height: 16px;
+}
+.pages{
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: clamp(18px, 2.2vw, 40px);
+    font-family: Helvetica, Arial, sans-serif;
+}
+.page{
+    font-size: clamp(15px, 1vw, 18px);
+    color: black;
+    text-decoration: none;
+}
+.page:hover{
+    transition: 0.5s;
+    color: rgb(46, 125, 128);
+}
+.active{
+    color: rgb(46, 125, 128);
+}
+.arrow{
+    display: block;
+}
+.arrow img{
+    display: block;
+    width: 10px;
+    height: 16px;
+}
+.arrow:hover{
+    transition: 0.5s;
+    opacity: 0.6;
+}
+.footer-container{
+    width: 100%;
+    background-color: rgb(87, 187, 191);
+}
+.footer-iframe{
+    display: block;
+    width: 100%;
+    height: 540px;
+    border: none;
+}
+@media (max-width: 1100px){
+    .card, .card2{
+        min-height: 300px;
+    }
+    .card-info{
+        padding: 20px 4% 0 4%;
+    }
+    .card-bottom{
+        height: 50px;
+    }
+}
+@media (max-width: 900px){
+    .main{
+        background-attachment: scroll;
+        background-position: 0 -68vw;
+    }
+    .head h2{
+        width: 70%;
+    }
+}
+@media (max-width: 700px){
+    .card, .card2{
+        flex-flow: column;
+        min-height: 0;
+    }
+    .card-img{
+        width: 100%;
+        height: clamp(200px, 55vw, 360px);
+    }
+    .card-info{
+        padding: 22px 5% 0 5%;
+    }
+    .card-info p{
+        margin-bottom: 24px;
+    }
+    .head h2{
+        width: 100%;
+    }
+    .footer-iframe{
+        height: 1100px;
+    }
+}
+@media (max-width: 500px){
+    .head{
+        padding: 0 4%;
+    }
+    .pages{
+        gap: 18px;
+    }
+    .footer-iframe{
+        height: 1200px;
+    }
+}

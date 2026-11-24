@@ -1,0 +1,145 @@
+@font-face {
+    font-family: montserrat;
+    src: url(../font/Montserrat-VariableFont_wght.ttf);
+    font-weight: 100 900;
+}
+
+:root {
+    color-scheme: light;
+}
+
+.navbar {
+    width: 100%;
+    padding: 16px 0;
+    background: #ffffff;
+    color: #000000;
+    font-family: montserrat;
+}
+
+.navbar .container-fluid {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar .navbar-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    color: #000000;
+    text-decoration: none;
+}
+
+.navbar .brand-name {
+    font-weight: 800;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: 3px;
+    white-space: nowrap;
+}
+
+.navbar .brand-role {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 20px;
+    letter-spacing: 2px;
+    white-space: nowrap;
+}
+
+.navbar .navbar-nav {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.navbar .nav-link {
+    padding: 10px 0;
+    color: #000000;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    line-height: 24px;
+}
+
+.navbar .nav-link:hover {
+    color: #2c8e94;
+}
+
+.navbar .nav-link.nav-login {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    color: #2c8e94;
+}
+
+.navbar .login-icon {
+    flex-shrink: 0;
+}
+
+@media (min-width: 992px) {
+    .navbar {
+        padding: 24px 0 14px;
+    }
+
+    .navbar .container-fluid {
+        align-items: flex-start;
+        justify-content: center;
+    }
+
+    .navbar .navbar-brand {
+        margin-right: clamp(24px, 4.7vw, 77px);
+    }
+
+    .navbar .navbar-toggler {
+        display: none;
+    }
+
+    .navbar .drawer {
+        display: flex;
+        position: static;
+        inset: auto;
+        transform: none;
+        visibility: visible;
+        opacity: 1;
+        flex-grow: 0;
+        width: auto;
+        height: auto;
+        max-width: none;
+        max-height: none;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        overflow: visible;
+        background: transparent;
+        color: inherit;
+    }
+
+    .navbar .drawer-header {
+        display: none;
+    }
+
+    .navbar .drawer-body {
+        display: flex;
+        flex-grow: 0;
+        padding: 0;
+        overflow: visible;
+    }
+
+    .navbar .navbar-nav {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        gap: clamp(14px, 1.8vw, 30px);
+    }
+
+    .navbar .nav-link {
+        padding: 0;
+        font-size: clamp(13px, 1vw, 16px);
+    }
+
+    .navbar .nav-item-login {
+        margin-left: clamp(4px, 0.7vw, 12px);
+    }
+}
