@@ -71,11 +71,15 @@
         const menu = document.querySelector(".menu");
         const desktop = window.matchMedia("(min-width: 1001px)");
 
-        // the header lives in an iframe, so grow the iframe to fit the open menu
         function resizeFrame(open) {
             try {
-                const box = window.frameElement.closest(".container");
-                box.style.height = open ? (80 + menu.offsetHeight) + "px" : "";
+                const frame = window.frameElement;
+                const wrapper = frame.parentElement;
+                const height = open ? (80 + menu.offsetHeight) + "px" : "";
+                frame.style.height = height;
+                if (getComputedStyle(wrapper).overflow === "hidden") {
+                    wrapper.style.height = height;
+                }
             } catch (error) {}
         }
 
@@ -87,7 +91,6 @@
 
         burger.addEventListener("click", () => toggleMenu(!menu.classList.contains("open")));
 
-        // close the menu if the screen gets wide again
         desktop.addEventListener("change", (e) => {
             if (e.matches) toggleMenu(false);
         });
