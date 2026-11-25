@@ -35,7 +35,7 @@ body{
     width: clamp(280px, 70vw, 1000px);
     min-height: clamp(150px, 60vh, 400px);
     background-color: white;
-    margin-top: clamp(50px,4vh,93px);
+    margin-top: clamp(50px,5vh,93px);
 }
 .mini-card-top{
     display: flex;

@@ -21,6 +21,12 @@
                 </span>
             </a>
         </div>
+        <button class="burger" type="button" aria-label="Open menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <div class="menu">
         <div class="nav-elements element2">
             <ul class="pages">
                 <li class="page-links">
@@ -47,18 +53,44 @@
             </ul>
         </div>
             
-            <div class="nav-elements element3">
-            <button>
+        <div class="nav-elements element3">
+            <a href="">
+                <button type="button">
                     <div class="svg">
                     <svg xmlns="http://www.w3.org/2000/svg" height="28" width="28" viewBox="0 0 640 640"><!--!Font Awesome Free v7.3.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path fill="rgb(0, 128, 128)" d="M463 448.2C440.9 409.8 399.4 384 352 384L288 384C240.6 384 199.1 409.8 177 448.2C212.2 487.4 263.2 512 320 512C376.8 512 427.8 487.3 463 448.2zM64 320C64 178.6 178.6 64 320 64C461.4 64 576 178.6 576 320C576 461.4 461.4 576 320 576C178.6 576 64 461.4 64 320zM320 336C359.8 336 392 303.8 392 264C392 224.2 359.8 192 320 192C280.2 192 248 224.2 248 264C248 303.8 280.2 336 320 336z"/></svg>
                     </div>
-                    <a href="">
-                    <span class="log-in">
-                            Log In
-                    </span>
-            </button>
+                    <span class="log-in">Log In</span>
+                </button>
             </a>
         </div>
+        </div>
     </nav>
+
+    <script>
+        const burger = document.querySelector(".burger");
+        const menu = document.querySelector(".menu");
+        const desktop = window.matchMedia("(min-width: 1001px)");
+
+        // the header lives in an iframe, so grow the iframe to fit the open menu
+        function resizeFrame(open) {
+            try {
+                const box = window.frameElement.closest(".container");
+                box.style.height = open ? (80 + menu.offsetHeight) + "px" : "";
+            } catch (error) {}
+        }
+
+        function toggleMenu(open) {
+            menu.classList.toggle("open", open);
+            burger.setAttribute("aria-expanded", open);
+            resizeFrame(open);
+        }
+
+        burger.addEventListener("click", () => toggleMenu(!menu.classList.contains("open")));
+
+        // close the menu if the screen gets wide again
+        desktop.addEventListener("change", (e) => {
+            if (e.matches) toggleMenu(false);
+        });
+    </script>
 </body>
 </html>

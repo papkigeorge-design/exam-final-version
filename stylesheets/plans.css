@@ -34,7 +34,7 @@ body {
     width: 90%;
     margin: 0 auto;
     text-align: center;
-    margin-top: clamp(20px, 2vh, 30px);
+    margin-top: clamp(20px, 5vh, 50px);
 }
 
 .plans-header h1 {
